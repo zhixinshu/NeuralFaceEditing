@@ -3,6 +3,9 @@ Code, pre-trained model and data for paper
 *Neural Face Editing with Intrinsic Image Disentangling.*
 [[arxiv](https://arxiv.org/abs/1704.04131)]
 
+## Data
+Part of our augmented CelebA (http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html) (hdf5 file, with rough estimation of mask, normals, and spherical harmonics parameters) can be found at: [[Google Drive](https://drive.google.com/drive/folders/1UMiaw36z2E1F-tUBSMKNAjpx0o2TePvF?usp=sharing)].
+
 ## Citation
 If you use our code, please consider cite the following:
  Zhixin Shu, Ersin Yumer, Sunil Hadap, Kalyan Sunkavalli, Eli Shechtman, and Dimitris Samaras.
