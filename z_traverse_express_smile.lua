@@ -42,8 +42,6 @@ ok, disp = pcall(require, 'display')
 if not ok then print('display not found. unable to plot') end
 formation = require 'dipface_express'
 
---models/dipface_hardnn_nounpool_batchwhite_ebadv_ct4_e217.net
---models/dipface_rgb_hardnn_partialunpool_mp1_e222.net
 ----------------------------------------------------------------------
 -- parse command-line optionsls
 opt = lapp[[
@@ -154,19 +152,11 @@ function getSamples(dataset, N, fixid)
   end 
   local zA_sample, zN_sample, zL_sample = unpack(model_Enc:forward(inputs_samples_img))
   local synth_samples,A_samples,N_samples,Lr_samples,Lg_samples,Lb_samples,S_samples = unpack(model_Dec:forward({zA_sample, zN_sample, zL_sample,inputs_samples_mask}))
-  --local synth_samples,A_samples,N_samples,L_samples,S_samples, M_samples = unpack(model_G:forward({inputs_samples_img, inputs_samples_mask}))
-  print(synth_samples:size())
   synth_samples = nn.HardTanh():forward(synth_samples)
   A_samples = nn.HardTanh():forward(A_samples)
   N_samples = nn.HardTanh():forward(N_samples)
   S_samples = nn.Tanh():forward(S_samples)
   N_samples = (N_samples+1)*0.5
-
-  --N_samples = 0.5*(N_samples+1)
-  --local samplesplit
-  --samplesplit = samples:chunk(2,2)  -- split the 6-d image to two 3-d images
-  --samples_1 = samplesplit[1]
-  --samples_2 = samplesplit[2]
 
   local to_plot_0 = {}
   local to_plot_1 = {}
