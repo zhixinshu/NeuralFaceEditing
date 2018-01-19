@@ -1,10 +1,8 @@
+------------------------------------------------------------
+--- Code for 
+-- Shu et al., Neural Face Editing with Intrinsic Image Disentangling, CVPR 2017.
+------------------------------------------------------------
 
-------------------------------------------------------------
---- This code is based on the eyescream code released at
---- https://github.com/facebook/eyescream
---- If you find it usefull consider citing
---- http://arxiv.org/abs/1506.05751
-------------------------------------------------------------
 
 require 'hdf5'
 require 'nngraph'
